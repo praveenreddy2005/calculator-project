@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+:root {
+  --bg: #2c003e;
+  --calc-bg: #111;
+  --text-color: #00ffcc;
+  --btn-color: #333;
+  --operator-color: #ff7b00;
+  --equal-color: #00ffcc;
+  --quote-color: #fff;
+}
+
+body.light {
+  --bg: #f0f0f0;
+  --calc-bg: #ffffff;
+  --text-color: #111;
+  --btn-color: #ddd;
+  --operator-color: #ff6b00;
+  --equal-color: #00c7b1;
+  --quote-color: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: var(--bg);
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mode-toggle {
+  margin: 15px;
+  text-align: right;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mode-toggle button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.calculator {
+  background-color: var(--calc-bg);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  width: 450px;
+}
+
+.title {
+  text-align: center;
+  color: var(--text-color);
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+#display {
+  width: 100%;
+  padding: 20px;
+  font-size: 2rem;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #222;
+  color: var(--text-color);
+  text-align: right;
+  box-sizing: border-box;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2rem;
+  background-color: var(--btn-color);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:nth-child(1),
+button:nth-child(2),
+button:nth-child(3),
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16) {
+  background-color: var(--operator-color);
+}
+
+.equal {
+  grid-column: span 2;
+  background-color: var(--equal-color);
+  color: #000;
+  font-weight: bold;
+}
+
+.equal:hover {
+  background-color: #00e6b8;
+}
+
+.history {
+  max-width: 320px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  color: var(--text-color);
+}
+
+.history h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+#history-list {
+  list-style-type: none;
+  padding-left: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#history-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #555;
+  font-size: 0.95rem;
+}
+
+.quote {
+  color: var(--quote-color);
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 95%;
+  }
+}
